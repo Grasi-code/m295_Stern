@@ -98,6 +98,7 @@ app.delete('/tasks/:id', (req, res) => {
     }
 });
 
+//Help from ChatGPT
 app.use(function(req, res, next) {
   res.status(404).send('404 Not Found');
 }); 
