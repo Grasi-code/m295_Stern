@@ -98,6 +98,10 @@ app.delete('/tasks/:id', (req, res) => {
     }
 });
 
+app.use(function(req, res, next) {
+  res.status(404).send('404 Not Found');
+}); 
+
 app.listen(port, function() {
   console.log(`Example app listening on port ${port}!`)
 });
