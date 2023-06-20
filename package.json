@@ -1,0 +1,24 @@
+{
+  "name": "m295_stern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grasi-code/m295_Stern.git"
+  },
+  "author": "Alex Stern",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grasi-code/m295_Stern/issues"
+  },
+  "homepage": "https://github.com/Grasi-code/m295_Stern#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
+  }
+}

@@ -1,0 +1,146 @@
+openapi: 3.0.3
+info:
+  title: M295 
+  contact:
+    name: Alexander Stern
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Task Server
+  - url: http://localhost:3001
+    description: Login Server
+tags:
+- name: tasks
+- name: login 
+
+paths:
+  /tasks:
+    get:
+      tags:
+      - tasks
+      summary: Get all tasks
+      responses:
+        '200':
+          description: Successful response
+    post:
+      tags:
+      - tasks
+      summary: Create a new task
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '201':
+          description: Successful response
+  /tasks/{id}:
+    get:
+      tags:
+      - tasks
+      summary: Get a specific task by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the task to retrieve
+      responses:
+        '200':
+          description: Successful response
+        '404':
+          description: Task not found
+    put:
+      tags:
+      - tasks
+      summary: Update a specific task by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the task to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '200':
+          description: Successful response
+        '404':
+          description: Task not found
+    delete:
+      tags:
+      - tasks
+      summary: Delete a specific task by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID of the task to delete
+      responses:
+        '200':
+          description: Successful response
+        '404':
+          description: Task not found
+  /login:
+    post:
+      tags:
+      - login
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+  /verify:
+    get:
+      tags:
+      - login
+      summary: Verify user session
+      responses:
+        '200':
+          description: Successful response
+        '401':
+          description: Unauthorized
+  /logout:
+    delete:
+      tags:
+      - login
+      summary: User logout
+      responses:
+        '204':
+          description: Successful response
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        id:
+          type: integer
+        titel:
+          type: string
+        created_at:
+          type: string
+        completed_at:
+          type: string
+    LoginRequest:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
