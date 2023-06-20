@@ -19,3 +19,11 @@ To start the tasks run nodemon tasks.js and to run login.js run nodemon login.js
 tasks.js: <http://localhost:3000/tasks>
 
 login.js: <http://localhost:3001/>
+
+## Documentation
+
+Swagger/OpenApi Doc: <https://swagger.io/docs/>
+
+## Other Information
+
+Tabnine was used for more efficent coding
