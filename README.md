@@ -6,6 +6,8 @@ The M295 Task API allows you to manage a ToDo application. It provides various e
 
 Alex Stern
 
+Github: <https://github.com/Grasi-code/m295_Stern>
+
 ## Installation
 
 Clone the project and run npm install to install the necessary packages.
